@@ -51,7 +51,7 @@ SHARED_APPS = (
 SHARED_APPS += INSTALLED_APPS
 TENANT_APPS = INSTALLED_APPS
 INSTALLED_APPS = SHARED_APPS
-
+# TENANT_APPS += ("hotel",)
 SITE_ID = 1  # or another appropriate ID based on your setup
 # Make sure to define the public schema name
 PUBLIC_SCHEMA_NAME = "public"
