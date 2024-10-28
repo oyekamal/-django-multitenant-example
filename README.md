@@ -1,4 +1,4 @@
-# Django Multi-Tenant Project
+# Django Multi-Tenant Example
 
 This project demonstrates a multi-tenant setup in Django using the `django-tenants` package. The configuration uses Docker to manage a PostgreSQL database, which is optimized for multi-tenant architecture.
 
