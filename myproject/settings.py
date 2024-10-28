@@ -46,6 +46,7 @@ INSTALLED_APPS = (
 SHARED_APPS = (
     "django_tenants",  # mandatory
     "customers",  # you must list the app where your tenant model resides in
+    "reviews",
 )
 
 SHARED_APPS += INSTALLED_APPS
