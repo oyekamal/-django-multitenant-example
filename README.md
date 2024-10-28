@@ -45,7 +45,7 @@ python manage.py shell
 ```
 
 ### First Tenant:
-```bash
+```python
 from customers.models import Client, Domain
 
 # create your public tenant
@@ -65,7 +65,7 @@ domain.save()
 
 
 ### Second Tenant:
-```bash
+```python
 from customers.models import Client, Domain
 
 # create your first real tenant
