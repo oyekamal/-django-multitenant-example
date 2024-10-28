@@ -36,14 +36,7 @@ python manage.py migrate_schemas --shared
 ```
 
 
-Step 4: Create a Superuser
-
-
-```bash
-python manage.py createsuperuser --schema=public
-```
-
-Step 5: Creating Tenants
+Step 4: Creating Tenants
 
 
 ```bash
@@ -90,8 +83,14 @@ domain.is_primary = True
 domain.save()
 ```
 
+Step 5: Create a Superuser
 
-Step 7: Running the Development Server
+
+```bash
+python manage.py createsuperuser --schema=public
+```
+
+Step 6: Running the Development Server
 
 You can run the Django development server locally:
 
