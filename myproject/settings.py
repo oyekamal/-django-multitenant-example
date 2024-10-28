@@ -28,27 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 print(BASE_DIR)
 
-# Application definition
-# TENANT_APPS = (
-#     'django.contrib.contenttypes',
-#     # 'tenants',  # Example tenant-specific app
-# )
 
-# SHARED_APPS = (
-#     # 'django_tenants',
-#     'django.contrib.contenttypes',
-#     'django.contrib.auth',
-#     'django.contrib.admin',
-#     'django.contrib.sessions',
-#     'django.contrib.messages',
-#     'django.contrib.staticfiles',
-# )
-
-# INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in SHARED_APPS]
-
-SHARED_APPS = (
-    "django_tenants",  # mandatory
-    "customers",  # you must list the app where your tenant model resides in
+INSTALLED_APPS = (
     "django.contrib.contenttypes",
     # everything below here is optional
     "django.contrib.auth",
@@ -57,16 +38,20 @@ SHARED_APPS = (
     "django.contrib.messages",
     "django.contrib.admin",
     "django.contrib.staticfiles",
-)
-
-TENANT_APPS = (
     # your tenant-specific apps
     "hotel",
 )
 
-INSTALLED_APPS = list(SHARED_APPS) + [
-    app for app in TENANT_APPS if app not in SHARED_APPS
-]
+
+SHARED_APPS = (
+    "django_tenants",  # mandatory
+    "customers",  # you must list the app where your tenant model resides in
+)
+
+SHARED_APPS += INSTALLED_APPS
+TENANT_APPS = INSTALLED_APPS
+INSTALLED_APPS = SHARED_APPS
+
 SITE_ID = 1  # or another appropriate ID based on your setup
 # Make sure to define the public schema name
 PUBLIC_SCHEMA_NAME = "public"

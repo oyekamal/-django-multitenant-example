@@ -40,7 +40,6 @@ Step 4: Creating Tenants
 
 
 ```bash
-sudo docker-compose exec web bash
 python manage.py shell
 ```
 
@@ -87,7 +86,7 @@ Step 5: Create a Superuser
 
 
 ```bash
-python manage.py createsuperuser --schema=public
+python manage.py create_tenant_superuser --schema=public
 ```
 
 Step 6: Running the Development Server
@@ -114,7 +113,7 @@ For example:
 
 ```bash
 
-python manage.py createsuperuser --schema=tenant1
+python manage.py create_tenant_superuser --schema=tenant1
 
 ```
 Load Data for a Specific Schema:
