@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     # your tenant-specific apps
     "hotel",
+    "features",
 )
 
 
@@ -52,7 +53,36 @@ SHARED_APPS = (
 SHARED_APPS += INSTALLED_APPS
 TENANT_APPS = INSTALLED_APPS
 INSTALLED_APPS = SHARED_APPS
-# TENANT_APPS += ("hotel",)
+TENANT_APPS += (
+    "hotel",
+    "features",
+)
+
+
+# TENANT_APPS = (
+#     # your tenant-specific apps
+#     "django.contrib.contenttypes",
+#     # everything below here is optional
+#     "django.contrib.auth",
+#     "django.contrib.sessions",
+#     "django.contrib.sites",
+#     "django.contrib.messages",
+#     "django.contrib.admin",
+#     "django.contrib.staticfiles",
+#     # your tenant-specific apps
+#     "hotel",
+#     "features",
+# )
+
+
+# SHARED_APPS = (
+#     "django_tenants",  # mandatory
+#     "customers",  # you must list the app where your tenant model resides in
+#     "reviews",
+# )
+
+# INSTALLED_APPS = list(SHARED_APPS) + [app for app in TENANT_APPS if app not in SHARED_APPS]
+
 SITE_ID = 1  # or another appropriate ID based on your setup
 # Make sure to define the public schema name
 PUBLIC_SCHEMA_NAME = "public"

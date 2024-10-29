@@ -16,6 +16,22 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 1234:8080
+
+        
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user-name@domain-name.com
+      PGADMIN_DEFAULT_PASSWORD: strong-password
+    ports:
+      - "8888:80"
   # web:
   #   build: .
   #   command: python manage.py runserver 0.0.0.0:8000
